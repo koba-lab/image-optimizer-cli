@@ -1,0 +1,14 @@
+# ローカル用のdocker-compose
+version: '3'
+
+services:
+  app:
+    build: 
+      context: .
+      dockerfile: ./Dockerfile
+    volumes:
+      - ./src:/home/node/app
+      - ./tmp:/var/tmp
+    tty: true
+    stdin_open: true
+    working_dir: /home/node/app
